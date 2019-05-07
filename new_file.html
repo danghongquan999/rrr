@@ -1,0 +1,57 @@
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .header{
+        height: 70px;
+        background:blue;
+        width: 100%;
+        font-size: 30px;
+    }
+ 
+    .nav {
+        height: 50px;
+        background: red;
+        width: 100%;
+        font-size: 30px;
+    }
+ 
+    .content{
+        height: 500px;
+        background:yellow;
+        width: 100%;
+        font-size: 30px;
+    }
+</style>
+<div class="header">这是顶部</div>
+<div class="nav">这是导航栏</div>
+<div class="content">这是内容</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<script type="text/javascript">
+    // 获取导航栏到屏幕顶部的距离
+    var oTop = $(".nav").offset().top;
+    //获取导航栏的高度，此高度用于保证内容的平滑过渡
+    var martop = $('.nav').outerHeight();
+ 
+    var sTop = 0;
+    // 监听页面的滚动
+    $(window).scroll(function () {
+        // 获取页面向上滚动的距离
+        sTop = $(this).scrollTop();
+        // 当导航栏到达屏幕顶端
+        if (sTop >= oTop) {
+            // 修改导航栏position属性，使之固定在屏幕顶端
+            $(".nav").css({ "position": "fixed", "top": "0" });
+            // 修改内容的margin-top值，保证平滑过渡
+            $(".content").css({ "margin-top": martop });
+        } else {
+            // 当导航栏脱离屏幕顶端时，回复原来的属性
+            $(".nav").css({ "position": "static" });
+            $(".content").css({ "margin-top": "0" });
+        }
+    });
+</script>
