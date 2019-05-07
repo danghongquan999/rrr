@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>导航二级菜单效果</title>
+<style type="text/css">
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,textarea,select,option{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: black;
+}
+.uls{
+	list-style:none;
+}
+.uls li{
+	float: left;
+	width: 100px;
+	height: 35px;
+	background: gray;
+	text-align: center;
+	line-height: 35px;
+}
+.uls li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+.secondNav{
+	background: blue;
+	display: none;
+}
+.secondNav a{
+	display: block;
+}
+.secondNav a:hover{
+	background: red;
+}
+
+
+.uls li:hover .secondNav{
+	display: block;
+}
+
+.uls li:hover{
+	background: greenyellow;
+}
+
+.uls li:hover .firstA{
+	color: black;
+}
+</style>
+</head>
+<body>
+	<ul class="uls">
+		<li><a class="firstA" href="#">首页</a></li>
+		<li>
+			<a class="firstA" href="#">课程</a>
+			<div class="secondNav">
+				<a href="#">HTML5</a>
+				<a href="#">JAVAEE</a>
+				<a href="#">Python</a>
+				<a href="#">软件测试</a>
+			</div>
+		</li>
+		<li>
+			<a class="firstA" href="#">人才教育</a>
+			<div class="secondNav">
+				<a href="#">好好学习</a>
+				<a href="#">下课了</a>
+			</div>
+		</li>
+		<li>
+			<a class="firstA" href="#">走进千锋</a>
+			<div class="secondNav">
+				<a href="#">千锋简介</a>
+				<a href="#">千锋学员</a>
+			</div>
+		</li>
+		<li><a class="firstA" href="#">讲师团队</a></li>
+		<li><a class="firstA" href="#">培训服务</a></li>
+		<li><a class="firstA" href="#">联系我们</a></li>
+	</ul>
+</body>
+</html>
